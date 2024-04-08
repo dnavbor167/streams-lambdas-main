@@ -82,8 +82,8 @@ public class Ordenacion {
         // según la ordenación de los apellidos
         System.out.println("------- LISTA ORDENADA POR FECHA -------");
         List <LocalDate> fechas = contactos.stream()
-                .sorted((p1,p2)->p1.getApellidos().compareTo(p2.getApellidos()))
-                .map(p->p.getFechaNac())
+                .sorted((p1,p2)->p1.getApellidos().compareTo(p2.getApellidos())) //stream<Persona>
+                .map(p->p.getFechaNac()) //Stream<LocalDate> fechas
                 .collect(Collectors.toList());
         
         fechas.forEach(System.out::println);
